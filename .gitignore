@@ -1,0 +1,44 @@
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Node.js / Tailwind build stuff
+node_modules/
+dist/
+build/
+.cache/
+.postcss-cache/
+
+# Tailwind output file (if generated)
+output.css
+output.css.map
+
+# Env files
+.env
+.env.local
+.env.*
+
+# Local image assets (optional - only if not needed in repo)
+magnifying-glass.png
+pencil-stand.png
+
+# VSCode & editor configs
+.vscode/
+.idea/
+
+# Optional - Git backup or history
+*.swp
+*.bak
+*.tmp
+*.orig

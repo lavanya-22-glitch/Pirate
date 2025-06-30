@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lavanya Bhadani | Landing</title>
+  <link href="./output.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    .nav-link {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      scale: 0.9;
+      color: white;
+      font-weight: bold;
+      font-size: 1.25rem;
+      transition: all 0.3s ease;
+      pointer-events: none;
+      z-index: 50;
+    }
+
+    .nav-link.revealed {
+      opacity: 1;
+      scale: 1.1;
+      pointer-events: auto;
+    }
+  </style>
+
+</head>
+
+
+<body class="bg-black text-white overflow-x-hidden">
+
+  <!-- Hero Section -->
+  <section class="h-screen bg-cover bg-center bg-no-repeat flex items-center justify-center relative" style="background-image: url('https://www.beaches.com/blog/content/images/2022/03/Caribbean-Piratre-Ship-Sunset.jpg');">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 backdrop-blur-sm bg-white/20 border border-white/30 rounded-xl shadow-lg p-8 w-[80%] max-w-lg text-center">
+      <h2 class="text-xl mb-2">Hello there fella!</h2>
+      <h1 class="text-4xl font-bold mb-2">I'm Lavanya Bhadani</h1>
+      <h3 class="text-lg">So glad to see you here!</h3>
+    </div>
+    <p class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white text-sm z-10">Scroll down to explore ↓</p>
+  </section>
+
+  <section id="map-section"
+    class="relative h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
+    style="background-image: url('https://thumb.photo-ac.com/b7/b717cf0fe576af38c3b8d5b58213818e_t.jpeg');"
+    data-aos="zoom-in"
+    data-aos-delay="300"
+    data-aos-duration="1500"
+    data-aos-easing="ease-out-cubic"
+  >
+    <!-- Darker Overlay with hole -->
+    <div id="overlay"
+      class="absolute inset-0 bg-black/90 pointer-events-none z-20"
+      style="mask-image: radial-gradient(circle 100px at 0 0, transparent 100px, black 101px); 
+             -webkit-mask-image: radial-gradient(circle 100px at 0 0, transparent 100px, black 101px);"
+    ></div>
+
+    <!-- Hidden Nav Links, scattered around -->
+    <div id="nav-links" class="absolute top-0 left-0 w-full h-full z-30">
+      <a href="#about" class="nav-link" style="top: 20%; left: 25%;">About</a>
+      <a href="#projects" class="nav-link" style="top: 38%; left: 70%;">Projects</a>
+      <a href="#contact" class="nav-link" style="top: 60%; left: 20%;">Contact</a>
+      <a href="#blog" class="nav-link" style="top: 75%; left: 65%;">Blog</a>
+      <a href="#more" class="nav-link" style="top: 50%; left: 50%;">More</a>
+    </div>
+
+    <!-- Draggable Magnifying Glass -->
+    <img
+      src="./magnifying glass.png"
+      alt="Magnifying Glass"
+      id="magnifier"
+      class="fixed bottom-10 left-10 w-[120px] opacity-90 cursor-grab select-none z-40"
+    />
+
+    <!-- Text Box in Center -->
+    <!-- Top-right floating box -->
+    <div id="mind-box"
+      class="absolute top-8 right-8 z-30 max-w-sm backdrop-blur-md bg-white/20 text-white border border-white/30 p-4 rounded-2xl text-right shadow-xl transition-opacity duration-300">
+      <h2 class="text-2xl font-semibold mb-1 tracking-wide">Map of My Mind</h2>
+      <p class="text-sm leading-snug opacity-90">Use the magnifying glass to explore hidden details 🗺️</p>
+    </div>
+
+  </section>
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <!-- AOS & Script -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const magnifier = document.getElementById("magnifier");
+    const overlay = document.getElementById("overlay");
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+
+    function checkReveal(centerX, centerY) {
+      navLinks.forEach(link => {
+        const rect = link.getBoundingClientRect();
+        const linkCenterX = rect.left + rect.width / 2;
+        const linkCenterY = rect.top + rect.height / 2;
+        const dx = centerX - linkCenterX;
+        const dy = centerY - linkCenterY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < 100) {
+          link.classList.add('revealed');
+        } else {
+          link.classList.remove('revealed');
+        }
+      });
+    }
+
+    magnifier.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      magnifier.style.cursor = "grabbing";
+      offsetX = e.clientX - magnifier.getBoundingClientRect().left;
+      offsetY = e.clientY - magnifier.getBoundingClientRect().top;
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (!isDragging) return;
+      const x = e.clientX - offsetX;
+      const y = e.clientY - offsetY;
+      magnifier.style.left = `${x}px`;
+      magnifier.style.top = `${y}px`;
+      magnifier.style.position = "fixed";
+
+      const holeX = x + 10;
+      const holeY = y + 10;
+
+      overlay.style.webkitMaskImage =
+        `radial-gradient(circle 100px at ${holeX}px ${holeY}px, transparent 100px, black 101px)`;
+      overlay.style.maskImage =
+        `radial-gradient(circle 100px at ${holeX}px ${holeY}px, transparent 100px, black 101px)`;
+
+      checkReveal(holeX, holeY);
+
+      const mindBox = document.getElementById('mind-box');
+      const mindRect = mindBox.getBoundingClientRect();
+
+      const glassRect = magnifier.getBoundingClientRect();
+
+      // Check overlap using bounding boxes
+      const isOverlapping =
+        !(glassRect.right < mindRect.left ||
+          glassRect.left > mindRect.right ||
+          glassRect.bottom < mindRect.top ||
+          glassRect.top > mindRect.bottom);
+
+      mindBox.style.opacity = isOverlapping ? "0" : "1";
+
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+      magnifier.style.cursor = "grab";
+    });
+
+    function checkReveal(centerX, centerY) {
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      navLinks.forEach(link => {
+        const rect = link.getBoundingClientRect();
+        const linkCenterX = rect.left + rect.width / 2;
+        const linkCenterY = rect.top + rect.height / 2;
+
+        const dx = centerX - linkCenterX;
+        const dy = centerY - linkCenterY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 100) {
+          link.classList.add('revealed');
+        } else {
+          link.classList.remove('revealed');
+        }
+      });
+    }
+
+  </script>
+  
+</body>
+</html>
+
