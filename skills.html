@@ -10,7 +10,7 @@
   <style>
 
     body {
-        background: linear-gradient(rgba(255, 255, 255, 0.379), rgba(255, 255, 255, 0.416)), url('about-bg.jpg') no-repeat center center/cover;
+        background: linear-gradient(rgba(255, 255, 255, 0.379), rgba(255, 255, 255, 0.416)), url('assets/about-bg.jpg') no-repeat center center/cover;
     }
 
     /* Optional if you want a scroll-reveal like parchment glow effect */
@@ -71,7 +71,7 @@
 
     /* Hidden initially, shown after first flip */
     #pages-bg {
-  background-image: url('pages.png');
+  background-image: url('assets/pages.png');
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -129,7 +129,7 @@
   right: 0;
   width: 50%;
   height: 100%;
-  background: url('right-page.png') center/cover no-repeat;
+  background: url('assets/right-page.png') center/cover no-repeat;
   opacity: 1; /* visible by default */
   transition: opacity 1.5s ease;
   pointer-events: none;
@@ -166,22 +166,22 @@
 
   <div class="relative w-[700px] h-[450px]">
     <!-- Static pages background (only after open) -->
-<div id="pages-bg" class="fixed inset-0 bg-[url('pages.png')] bg-cover bg-center z-0 hidden"></div>
+<div id="pages-bg" class="fixed inset-0 bg-[url('assets/pages.png')] bg-cover bg-center z-0 hidden"></div>
 
     <!-- Main Book Container -->
     <div id="book" class="book-scene relative w-full h-full cursor-pointer z-10">
       <!-- Front Cover -->
       <div id="bookFrontWrapper" class="absolute right-0 w-1/2 h-full z-50 origin-left preserve-3d transition-transform duration-[1200ms]">
-  <img src="book-front.png" id="bookFront" class="w-full h-full object-contain" />
+  <img src="assets/book-front.png" id="bookFront" class="w-full h-full object-contain" />
 </div>
 <!-- Placeholder Right Page Background (under front cover) -->
 <div id="placeholder-right"
-     class="absolute right-0 w-1/2 h-full z-30 bg-[url('right-page.png')] bg-contain bg-no-repeat opacity-100 transition-opacity duration-[1000ms] pointer-events-none">
+     class="absolute right-0 w-1/2 h-full z-30 bg-[url('assets/right-page.png')] bg-contain bg-no-repeat opacity-100 transition-opacity duration-[1000ms] pointer-events-none">
 </div>
 
       <!-- Flip 1: Technical + Soft Skills -->
 <div class="page-pair absolute inset-0 z-40 hidden text-amber-900 list-none" data-page="1">
-  <div class="book-half left-half bg-[url('left-page.png')] bg-contain bg-no-repeat">
+  <div class="book-half left-half bg-[url('assets/left-page.png')] bg-contain bg-no-repeat">
     <div class="flex flex-col justify-center items-center text-center h-full p-6 text-sm text-amber-900 list-none">
       <h2 class="text-xl font-semibold mb-2">Technical Skills</h2>
       <ul class="space-y-2">
@@ -194,7 +194,7 @@
       </ul>
     </div>
   </div>
-  <div class="book-half right-half bg-[url('right-page.png')] bg-contain bg-no-repeat">
+  <div class="book-half right-half bg-[url('assets/right-page.png')] bg-contain bg-no-repeat">
     <div class="flex flex-col justify-center items-center text-center h-full p-6 text-sm text-amber-900">
       <h2 class="text-xl font-semibold mb-2">Soft Skills</h2>
       <ul class="list-disc ml-4 space-y-1 text-left">
@@ -211,7 +211,7 @@
 
 <!-- Flip 2: Focus Areas + Certifications -->
 <div class="page-pair absolute inset-0 z-30 hidden" data-page="2">
-  <div class="book-half left-half bg-[url('left-page.png')] bg-contain bg-no-repeat">
+  <div class="book-half left-half bg-[url('assets/left-page.png')] bg-contain bg-no-repeat">
     <div class="flex flex-col justify-center items-center text-center h-full p-6 text-sm text-amber-900 list-none">
       <h2 class="text-xl font-semibold mb-2">Focus Areas</h2>
       <ul class="list-none ml-4 space-y-1 text-left">
@@ -222,7 +222,7 @@
       </ul>
     </div>
   </div>
-  <div class="book-half right-half bg-[url('right-page.png')] bg-contain bg-no-repeat">
+  <div class="book-half right-half bg-[url('assets/right-page.png')] bg-contain bg-no-repeat">
     <div class="flex flex-col justify-center items-center text-center h-full p-6 text-sm text-amber-900 list-none">
       <h2 class="text-xl font-semibold mb-2">Certifications</h2>
       <ul class="list-none ml-4 space-y-1 text-left">
@@ -237,7 +237,7 @@
 
 <!-- Flip 3: Currently Learning + Pirate Quote -->
 <div class="page-pair absolute inset-0 z-20 hidden" data-page="3">
-  <div class="book-half left-half bg-[url('left-page.png')] bg-contain bg-no-repeat">
+  <div class="book-half left-half bg-[url('assets/left-page.png')] bg-contain bg-no-repeat">
     <div class="flex flex-col justify-center items-center text-center h-full p-6 text-sm text-amber-900 list-none">
       <h2 class="text-xl font-semibold mb-2">Currently Learning</h2>
       <ul class="list-none ml-4 space-y-1 text-left">
@@ -251,7 +251,7 @@
       </ul>
     </div>
   </div>
-  <div class="book-half right-half bg-[url('right-page.png')] bg-contain bg-no-repeat">
+  <div class="book-half right-half bg-[url('assets/right-page.png')] bg-contain bg-no-repeat">
     <div class="flex flex-col justify-center items-center text-center h-full p-6 text-lg text-amber-900 italic">
       <p>"And many more coming soon!"</p>
     </div>
@@ -259,7 +259,7 @@
 </div>
 
       <!-- Back Cover -->
-      <img src="book-back.png" id="bookBack" class="page book-half left-half z-10 hidden" />
+      <img src="assets/book-back.png" id="bookBack" class="page book-half left-half z-10 hidden" />
     </div>
   </div>
 
