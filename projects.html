@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects | Lavanya Bhadani</title>
+  <title>Projects</title>
   <link rel="stylesheet" href="./output.css" />
   <link rel="stylesheet" href="./light.css" id="theme-style" />
 
@@ -11,20 +11,7 @@
     body {
       background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('assets/about-bg.jpg') no-repeat center center/cover;
     }
-/* @keyframes customFlagSway {
-  0%   { transform: rotate(0deg) skewX(0deg); }
-  20%  { transform: rotate(1deg) skewX(2deg); }
-  40%  { transform: rotate(-1.5deg) skewX(-2deg); }
-  60%  { transform: rotate(1.2deg) skewX(1deg); }
-  80%  { transform: rotate(-0.8deg) skewX(-1deg); }
-  100% { transform: rotate(0deg) skewX(0deg); }
-}
 
-.flag-animate {
-  transform-origin: left center; 
-  animation: customFlagSway 5s ease-in-out infinite;
-  will-change: transform;
-} */
 .flag-animate {
   transform-origin: top center;
   animation: waveFlag 10s ease-in-out infinite;
@@ -36,6 +23,90 @@
   75%  { transform: perspective(1000px) rotateX(-1deg) rotateZ(0.8deg) skewY(1deg); }
   100% { transform: perspective(1000px) rotateX(0deg) rotateZ(0deg) skewY(0deg); }
 }
+
+/* Zoom pulse for the Visit Website link */
+@keyframes zoom-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+.zoom-link {
+  display: inline-block;
+  animation: zoom-pulse 2.5s infinite;
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #f0dcb1;
+}
+.zoom-link:hover {
+  transform: scale(1.15);
+  color: #fff1c9;
+}
+
+/* Golden shimmer for content box */
+@keyframes gold-shimmer {
+  0% {
+    box-shadow: 0 0 8px #d6ba7a, 0 0 16px #b89c5d;
+  }
+  50% {
+    box-shadow: 0 0 12px #ffe8a8, 0 0 24px #d6ba7a;
+  }
+  100% {
+    box-shadow: 0 0 8px #d6ba7a, 0 0 16px #b89c5d;
+  }
+}
+.gold-box {
+  animation: gold-shimmer 3s infinite ease-in-out;
+}
+
+@keyframes barrelFall {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.8) rotate(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+.barrel-hidden {
+  opacity: 0;
+}
+
+.barrel-fall {
+  animation: barrelFall 2s ease-out forwards;
+}
+
+@keyframes barrelShimmy {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(3deg); }
+  50%  { transform: rotate(-3deg); }
+  75%  { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+.barrel-shimmy {
+  animation: barrelShimmy 0.6s ease-in-out;
+}
+
+@keyframes spreadOpen {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.spread-open {
+  transform-origin: top;
+  animation: spreadOpen 0.5s ease-out forwards;
+}
+
+
+
 
   </style>
 </head>
@@ -59,34 +130,34 @@
 
 <!-- Barrels on shelves with text -->
 <!-- 1 Shelf -->
-<div class="absolute top-[8%] left-[80%] w-[12%] cursor-pointer"
+<div class="barrel barrel-hidden absolute top-[8%] left-[80%] w-[12%] cursor-pointer"
      id="1"
      data-title="Talika"
-     data-points="Productivity made peaceful., Task Manager Website, Tech stack: HTML/ CSS/ JavaScript, Role: Solo Developer, Designed for minimalism and focus"
+     data-points="Productivity made peaceful., Task Manager Website, Tech stack: HTML/ CSS/ JavaScript, Role: Solo Developer, Designed for minimalism and focus, 🔗 visit website"
      data-link="https://task-manage-web-lavanyabhadani.netlify.app/">
   <img src="assets/barrel.png" alt="Barrel" class="w-full" />
   <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Talika</p>
 </div>
 
 <!-- 2 Shelf -->
-<div class="absolute top-[32%] left-[8%] w-[12%] cursor-pointer"
+<div class="barrel barrel-hidden absolute top-[32%] left-[8%] w-[12%] cursor-pointer"
      id="2"
      data-title="Suchita"
-     data-points="Real-time weather- reimagined simply., Weather App, Tech stack: React.js/ JavaScript/ HTML/ CSS/ Weather API, Role: Solo Developer, Live updates for any city, API integration + React practice, Visit Website">
+     data-points="Real-time weather- reimagined simply., Weather App, Tech stack: React.js/ JavaScript/ HTML/ CSS/ Weather API, Role: Solo Developer, Live updates for any city, API integration + React practice, 🔗 Visit Website">
   <img src="assets/barrel.png" alt="Barrel" class="w-full" />
   <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Suchita</p>
 </div>
 
-<div class="absolute top-[32%] left-[28%] w-[12%] cursor-pointer"
+<div class="barrel barrel-hidden absolute top-[32%] left-[28%] w-[12%] cursor-pointer"
      id="3"
      data-title="Light Side"
-     data-points="Designing brilliance with nothing but CSS., CSS Design (Competition Entry), Tech stack: Pure CSS (HTML provided), Role: CSS Designer, Minimal glowing theme, Responsive layout with transitions"
+     data-points="Designing brilliance with nothing but CSS., CSS Design (Competition Entry), Tech stack: Pure CSS (HTML provided), Role: CSS Designer, Minimal glowing theme, Responsive layout with transitions, 🔗 visit website"
      data-link="https://lavanya-22-glitch.github.io/Light-Side-Lavanya/">
   <img src="assets/barrel.png" alt="Barrel" class="w-full" />
   <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Light Side</p>
 </div>
 
-<div class="absolute top-[32%] left-[68%] w-[12%] cursor-pointer"
+<div class="barrel barrel-hidden absolute top-[32%] left-[68%] w-[12%] cursor-pointer"
      id="4"
      data-title="E-Commerce"
      data-points="Tailored shopping. From code to cart., Freelance E-Commerce Website, Tech stack: frontend plus backend, Role: Full-stack Developer, Built from scratch for a client, Smooth UX & fast performance">
@@ -95,37 +166,38 @@
 </div>
 
 <!-- 3 Shelf -->
-<div class="absolute top-[54.5%] left-[12%] w-[12%] cursor-pointer"
+<div class="barrel barrel-hidden absolute top-[54.5%] left-[12%] w-[12%] cursor-pointer"
      id="5"
      data-title="Order in Chaos"
-     data-points="Machine learning that sees time., ML Model: Image Reordering, Tech stack: Python and its libraries, Chronological sequencing using visual cues, Demonstrates image processing & temporal modeling"
+     data-points="Machine learning that sees time., ML Model: Image Reordering, Tech stack: Python and its libraries, Chronological sequencing using visual cues, Demonstrates image processing & temporal modeling, 🔗 visit website"
      data-link="https://github.com/lavanya-22-glitch/GraphVisionOrder">
   <img src="assets/barrel.png" alt="Barrel" class="w-full" />
   <p class="absolute inset-0 flex items-center justify-center text-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Order in Chaos</p>
 </div>
 
 
-<div class="absolute top-[54.5%] left-[58%] w-[12%] cursor-pointer"
+<div class="barrel barrel-hidden absolute top-[54.5%] left-[58%] w-[12%] cursor-pointer"
      id="6"
      data-title="Portfolio"
-     data-points="Showcase of everything I do., Official Portfolio Website, Dual-theme: light & dark, Tech stack: Custom HTML/ CSS/ JS, Showcases all my work & roles, Aesthetic + professional layout"
+     data-points="Showcase of everything I do., Official Portfolio Website, Dual-theme: light & dark, Tech stack: Custom HTML/ CSS/ JS, Showcases all my work & roles, Aesthetic + professional layout, 🔗 visit website"
      data-link="https://lavanya-22-glitch.github.io/Port/">
   <img src="assets/barrel.png" alt="Barrel" class="w-full" />
   <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Portfolio</p>
 </div>
 
 
-<div class="absolute top-[54.5%] left-[82%] w-[12%] cursor-pointer"
+<div class="barrel barrel-hidden absolute top-[54.5%] left-[82%] w-[12%] cursor-pointer"
      id="7"
      data-title="Pirate"
-     data-points="Where tech meets treasure., Pirate-Themed Portfolio Website, Whimsical & immersive design, Interactive treasure-map UI, Creative navigation with fun effects, Same content, different vibe">
+     data-points="Where tech meets treasure., Pirate-Themed Portfolio Website, Whimsical & immersive design, Interactive treasure-map UI, Creative navigation with fun effects, Same content, different vibe, 🔗 visit website"
+     data-link="https://lavanya-22-glitch.github.io/Pirate/">
   <img src="assets/barrel.png" alt="Barrel" class="w-full" />
   <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Pirate</p>
 </div>
 
 
 <!-- 4 Shelf -->
-<div class="absolute top-[80%] left-[11%] w-[12%] cursor-pointer"
+<div class="barrel barrel-hidden absolute top-[80%] left-[11%] w-[12%] cursor-pointer"
      id="8"
      data-title="Coming Soon"
      data-points="New project coming soon., Stay tuned for more!">
@@ -133,7 +205,7 @@
   <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">?</p>
 </div>
 
-<div class="absolute top-[80%] left-[35%] w-[12%] cursor-pointer"
+<div class="barrel barrel-hidden absolute top-[80%] left-[35%] w-[12%] cursor-pointer"
      id="9"
      data-title="Coming Soon"
      data-points="New project coming soon., Stay tuned for more!">
@@ -148,13 +220,13 @@
 
 
 <!-- Right: Flag and Content - 50% -->
-<div class="relative w-full flex flex-col items-center justify-center p-6 md:p-12 min-h-screen overflow-hidden">
+<div class="flag-animate relative w-full flex flex-col items-center justify-center p-6 md:p-12 min-h-screen overflow-hidden">
 
   <!-- Flag image -->
-  <img src="assets/flag.png" alt="Flag" class="absolute top-0 h-[98%] brightness-80 flag-animate z-0" />
+  <img src="assets/flag.png" alt="Flag" class="absolute top-0 h-[98%] brightness-80 z-0" />
 
-<div id="flag-info"
-     class="flag-animate absolute pl-4 top-[15%] w-[50%] max-w-md text-center text-[#ffffff] p-4 rounded-lg shadow-xl backdrop-blur-md opacity-0 transition-opacity duration-500 z-10">
+  <div id="flag-info"
+     class=" !gold-box absolute pl-4 top-[15%] w-[50%] max-w-md text-center text-[#ffffff] p-4 rounded-lg shadow-xl backdrop-blur-md opacity-0 transition-opacity duration-500 z-10">
 
   <!-- ❌ Cross aligned to content box -->
   <div class="flex justify-between items-start">
@@ -197,10 +269,35 @@
 
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const barrels = document.querySelectorAll('.barrel');
 
+  barrels.forEach((barrel, i) => {
+    setTimeout(() => {
+      barrel.classList.remove('barrel-hidden');
+      barrel.classList.add('barrel-fall');
+
+      // Remove fall class after it runs so it doesn't re-trigger
+      setTimeout(() => barrel.classList.remove('barrel-fall'), 1500);
+    }, i * 150);
+  });
+
+  // Shimmy after all barrels are done falling
+  const totalFallTime = barrels.length * 150 + 700;
+  setTimeout(() => {
+    barrels.forEach(barrel => {
+      barrel.classList.add('barrel-shimmy');
+      setTimeout(() => barrel.classList.remove('barrel-shimmy'), 600);
+    });
+  }, totalFallTime);
+});
+
+</script>
 
 
 <script>
+document.addEventListener('DOMContentLoaded', () => {
   const flagBox = document.getElementById('flag-info');
   const titleBox = document.getElementById('flag-title');
   const descList = document.getElementById('flag-desc');
@@ -211,34 +308,58 @@
     barrel.addEventListener('click', () => {
       const title = barrel.getAttribute('data-title');
       const points = barrel.getAttribute('data-points');
-      const lines = points ? points.split(',').map(line => line.trim()) : [];
+      const link = barrel.getAttribute('data-link');
 
+      const lines = points ? points.split(',').map(line => line.trim()) : [];
       const catchphrase = lines[0] || '';
       const rest = lines.slice(1);
 
-      // Show project title
+      // Set title
       titleBox.textContent = title;
 
-      // Inject catchphrase and list
+      // Set content
       descList.innerHTML = `
         <p class="text-[1.05rem] font-medium italic mb-2">${catchphrase}</p>
         <ul class="list-disc list-inside text-left space-y-1">
-          ${rest.map(item => `<li>${item}</li>`).join('')}
+          ${rest.map(item => {
+            if (item.toLowerCase() === '🔗 visit website' && link) {
+              return `<li><a href="${link}" target="_blank" class="underline text-[#f5e4ca] hover:text-[#ffe] transition-all duration-200 zoom-link">🔗 Visit Website</a></li>`;
+            } else {
+              return `<li>${item}</li>`;
+            }
+          }).join('')}
         </ul>
       `;
 
       // Animate in
       flagBox.style.opacity = '0';
+      flagBox.style.display = 'block';
       void flagBox.offsetWidth;
-      flagBox.style.opacity = '1';
+// Fade + spread
+flagBox.classList.remove('spread-open');
+void flagBox.offsetWidth; // Force reflow
+flagBox.classList.add('spread-open');
+
+
+      // Trigger shimmy animation on click
+barrel.classList.add('barrel-shimmy');
+setTimeout(() => {
+  barrel.classList.remove('barrel-shimmy');
+}, 500);
+
     });
   });
 
-  // ❌ Close flag content
+  // Close the flag content box
   closeButton.addEventListener('click', () => {
     flagBox.style.opacity = '0';
+    setTimeout(() => {
+      flagBox.style.display = 'none';
+    }, 300); // match your transition duration
   });
+});
 </script>
+
 
 
 
