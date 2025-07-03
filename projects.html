@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Lavanya Bhadani</title>
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="stylesheet" href="./light.css" id="theme-style" />
+
+  <style>
+    body {
+      background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('assets/about-bg.jpg') no-repeat center center/cover;
+    }
+/* @keyframes customFlagSway {
+  0%   { transform: rotate(0deg) skewX(0deg); }
+  20%  { transform: rotate(1deg) skewX(2deg); }
+  40%  { transform: rotate(-1.5deg) skewX(-2deg); }
+  60%  { transform: rotate(1.2deg) skewX(1deg); }
+  80%  { transform: rotate(-0.8deg) skewX(-1deg); }
+  100% { transform: rotate(0deg) skewX(0deg); }
+}
+
+.flag-animate {
+  transform-origin: left center; 
+  animation: customFlagSway 5s ease-in-out infinite;
+  will-change: transform;
+} */
+.flag-animate {
+  transform-origin: top center;
+  animation: waveFlag 10s ease-in-out infinite;
+}
+@keyframes waveFlag {
+  0%   { transform: perspective(1000px) rotateX(0deg) rotateZ(0deg) skewY(0deg); }
+  25%  { transform: perspective(1000px) rotateX(1deg) rotateZ(0.5deg) skewY(1deg); }
+  50%  { transform: perspective(1000px) rotateX(0deg) rotateZ(-0.5deg) skewY(-1.5deg); }
+  75%  { transform: perspective(1000px) rotateX(-1deg) rotateZ(0.8deg) skewY(1deg); }
+  100% { transform: perspective(1000px) rotateX(0deg) rotateZ(0deg) skewY(0deg); }
+}
+
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <div class="grid grid-cols-1 md:grid-cols-2 min-h-screen w-full">
+    
+    <!-- Left: Shelf - 50% -->
+    <div class="relative w-full min-h-screen overflow-hidden">
+      <img src="assets/shelf.jpg" alt="Shelf" class="absolute inset-0 w-full h-full" />
+      
+      <!-- "My Projects" text on top -->
+      <h1 class="absolute ml-3 mt-20 text-4xl md:text-5xl font-bold text-amber-950 px-4 py-2 rounded-xl shadow-md backdrop-blur-sm">
+        My Projects
+      </h1>
+
+      <h2 class="absolute text-sm md:text-md bottom-14 left-[55%] font-bold text-amber-50 px-4 py-2 rounded-xl shadow-md backdrop-blur-sm">
+        Click on a barrel to taste the wine.
+      </h2>
+
+
+<!-- Barrels on shelves with text -->
+<!-- 1 Shelf -->
+<div class="absolute top-[8%] left-[80%] w-[12%] cursor-pointer"
+     id="1"
+     data-title="Talika"
+     data-points="Productivity made peaceful., Task Manager Website, Tech stack: HTML/ CSS/ JavaScript, Role: Solo Developer, Designed for minimalism and focus"
+     data-link="https://task-manage-web-lavanyabhadani.netlify.app/">
+  <img src="assets/barrel.png" alt="Barrel" class="w-full" />
+  <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Talika</p>
+</div>
+
+<!-- 2 Shelf -->
+<div class="absolute top-[32%] left-[8%] w-[12%] cursor-pointer"
+     id="2"
+     data-title="Suchita"
+     data-points="Real-time weather- reimagined simply., Weather App, Tech stack: React.js/ JavaScript/ HTML/ CSS/ Weather API, Role: Solo Developer, Live updates for any city, API integration + React practice, Visit Website">
+  <img src="assets/barrel.png" alt="Barrel" class="w-full" />
+  <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Suchita</p>
+</div>
+
+<div class="absolute top-[32%] left-[28%] w-[12%] cursor-pointer"
+     id="3"
+     data-title="Light Side"
+     data-points="Designing brilliance with nothing but CSS., CSS Design (Competition Entry), Tech stack: Pure CSS (HTML provided), Role: CSS Designer, Minimal glowing theme, Responsive layout with transitions"
+     data-link="https://lavanya-22-glitch.github.io/Light-Side-Lavanya/">
+  <img src="assets/barrel.png" alt="Barrel" class="w-full" />
+  <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Light Side</p>
+</div>
+
+<div class="absolute top-[32%] left-[68%] w-[12%] cursor-pointer"
+     id="4"
+     data-title="E-Commerce"
+     data-points="Tailored shopping. From code to cart., Freelance E-Commerce Website, Tech stack: frontend plus backend, Role: Full-stack Developer, Built from scratch for a client, Smooth UX & fast performance">
+  <img src="assets/barrel.png" alt="Barrel" class="w-full" />
+  <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Ecom</p>
+</div>
+
+<!-- 3 Shelf -->
+<div class="absolute top-[54.5%] left-[12%] w-[12%] cursor-pointer"
+     id="5"
+     data-title="Order in Chaos"
+     data-points="Machine learning that sees time., ML Model: Image Reordering, Tech stack: Python and its libraries, Chronological sequencing using visual cues, Demonstrates image processing & temporal modeling"
+     data-link="https://github.com/lavanya-22-glitch/GraphVisionOrder">
+  <img src="assets/barrel.png" alt="Barrel" class="w-full" />
+  <p class="absolute inset-0 flex items-center justify-center text-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Order in Chaos</p>
+</div>
+
+
+<div class="absolute top-[54.5%] left-[58%] w-[12%] cursor-pointer"
+     id="6"
+     data-title="Portfolio"
+     data-points="Showcase of everything I do., Official Portfolio Website, Dual-theme: light & dark, Tech stack: Custom HTML/ CSS/ JS, Showcases all my work & roles, Aesthetic + professional layout"
+     data-link="https://lavanya-22-glitch.github.io/Port/">
+  <img src="assets/barrel.png" alt="Barrel" class="w-full" />
+  <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Portfolio</p>
+</div>
+
+
+<div class="absolute top-[54.5%] left-[82%] w-[12%] cursor-pointer"
+     id="7"
+     data-title="Pirate"
+     data-points="Where tech meets treasure., Pirate-Themed Portfolio Website, Whimsical & immersive design, Interactive treasure-map UI, Creative navigation with fun effects, Same content, different vibe">
+  <img src="assets/barrel.png" alt="Barrel" class="w-full" />
+  <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">Pirate</p>
+</div>
+
+
+<!-- 4 Shelf -->
+<div class="absolute top-[80%] left-[11%] w-[12%] cursor-pointer"
+     id="8"
+     data-title="Coming Soon"
+     data-points="New project coming soon., Stay tuned for more!">
+  <img src="assets/barrel.png" alt="Barrel" class="w-full" />
+  <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">?</p>
+</div>
+
+<div class="absolute top-[80%] left-[35%] w-[12%] cursor-pointer"
+     id="9"
+     data-title="Coming Soon"
+     data-points="New project coming soon., Stay tuned for more!">
+  <img src="assets/barrel.png" alt="Barrel" class="w-full" />
+  <p class="absolute inset-0 flex items-center justify-center text-xs md:text-sm text-[#e9d7b1] font-bold pointer-events-none">?</p>
+</div>
+
+    </div>
+
+
+
+
+
+<!-- Right: Flag and Content - 50% -->
+<div class="relative w-full flex flex-col items-center justify-center p-6 md:p-12 min-h-screen overflow-hidden">
+
+  <!-- Flag image -->
+  <img src="assets/flag.png" alt="Flag" class="absolute top-0 h-[98%] brightness-80 flag-animate z-0" />
+
+<div id="flag-info"
+     class="flag-animate absolute pl-4 top-[15%] w-[50%] max-w-md text-center text-[#ffffff] p-4 rounded-lg shadow-xl backdrop-blur-md opacity-0 transition-opacity duration-500 z-10">
+
+  <!-- ❌ Cross aligned to content box -->
+  <div class="flex justify-between items-start">
+    <h2 id="flag-title" class="text-xl font-bold mb-2 text-left"></h2>
+    <button id="close-flag"
+            class="text-white text-lg font-bold hover:scale-110 transition-transform duration-150 ml-4">
+      ✖
+    </button>
+  </div>
+
+  <p id="flag-desc" class="text-sm leading-snug text-left"></p>
+</div>
+
+</div>
+
+
+
+  </div>
+
+  <!-- Back to Map Button -->
+  <a href="index.html"
+    class="fixed bottom-4 right-4 
+            bg-[#c8b6a6] text-[#3b2f2f]
+            px-4 py-2 
+            rounded-full 
+            border border-[#a8927a]
+            shadow-md 
+            hover:bg-[#bfa999] 
+            hover:text-[#2e1f1f]
+            hover:scale-105 
+            transition duration-200 ease-in-out 
+            text-sm font-medium tracking-tight z-20">
+    <span class="text-xl">🧭</span> Back to the Map
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  const flagBox = document.getElementById('flag-info');
+  const titleBox = document.getElementById('flag-title');
+  const descList = document.getElementById('flag-desc');
+  const closeButton = document.getElementById('close-flag');
+
+  // Handle barrel clicks
+  document.querySelectorAll('[data-title]').forEach(barrel => {
+    barrel.addEventListener('click', () => {
+      const title = barrel.getAttribute('data-title');
+      const points = barrel.getAttribute('data-points');
+      const lines = points ? points.split(',').map(line => line.trim()) : [];
+
+      const catchphrase = lines[0] || '';
+      const rest = lines.slice(1);
+
+      // Show project title
+      titleBox.textContent = title;
+
+      // Inject catchphrase and list
+      descList.innerHTML = `
+        <p class="text-[1.05rem] font-medium italic mb-2">${catchphrase}</p>
+        <ul class="list-disc list-inside text-left space-y-1">
+          ${rest.map(item => `<li>${item}</li>`).join('')}
+        </ul>
+      `;
+
+      // Animate in
+      flagBox.style.opacity = '0';
+      void flagBox.offsetWidth;
+      flagBox.style.opacity = '1';
+    });
+  });
+
+  // ❌ Close flag content
+  closeButton.addEventListener('click', () => {
+    flagBox.style.opacity = '0';
+  });
+</script>
+
+
+
+</body>
+</html>
