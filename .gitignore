@@ -21,7 +21,6 @@ build/
 .postcss-cache/
 
 # Tailwind output file (if generated)
-output.css
 output.css.map
 
 # Env files
