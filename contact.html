@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,14 +10,14 @@
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-.content {
-  background: url('assets/wavy-night.jpg') repeat-x center center;
-  background-size: cover;
-  /* animation: bgSway 8s ease-in-out infinite; */
-  font-family: 'serif';
-  overflow-x: hidden;
-  will-change: background-position;
-}
+    .content {
+      background: url('assets/wavy-night.jpg') repeat-x center center;
+      background-size: cover;
+      /* animation: bgSway 8s ease-in-out infinite; */
+      font-family: 'serif';
+      overflow-x: hidden;
+      will-change: background-position;
+    }
 
     #ship {
       position: absolute;
@@ -44,26 +45,30 @@
     }
 
     .burst {
-  animation: flareExplosion 0.8s ease-out forwards;
-}
+      animation: flareExplosion 0.8s ease-out forwards;
+    }
 
-@keyframes launchFlare {
-  0% {
-    bottom: 45%;
-    opacity: 1;
-    transform: scale(1);
-  }
-  80% {
-    opacity: 1;
-    transform: scale(1.2) translate(200px, -30px); /* controlled arc */
-    bottom: 75%;
-  }
-  100% {
-    bottom: 85%;
-    opacity: 1;
-    transform: scale(1.2) translate(280px, -45px); /* final visible burst position */
-  }
-}
+    @keyframes launchFlare {
+      0% {
+        bottom: 45%;
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      80% {
+        opacity: 1;
+        transform: scale(1.2) translate(200px, -30px);
+        /* controlled arc */
+        bottom: 75%;
+      }
+
+      100% {
+        bottom: 85%;
+        opacity: 1;
+        transform: scale(1.2) translate(280px, -45px);
+        /* final visible burst position */
+      }
+    }
 
     @keyframes flareExplosion {
       0% {
@@ -71,6 +76,7 @@
         transform: scale(1);
         background: #fff8e7;
       }
+
       100% {
         opacity: 0;
         transform: scale(20);
@@ -93,29 +99,39 @@
     }
 
 
-#contact-panel {
-  position: fixed;
-  right: 5%;
-  top: 100%;
-  transform: translateY(0);
-  opacity: 0;
-  transition: top 0.6s ease, opacity 0.6s ease;
-  pointer-events: none;
-  max-height: 90vh;
-  overflow-y: auto;
-}
+    #contact-panel {
+      position: fixed;
+      right: 5%;
+      top: 100%;
+      transform: translateY(0);
+      opacity: 0;
+      transition: top 0.6s ease, opacity 0.6s ease;
+      pointer-events: none;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
 
-#contact-panel.show-form {
-  top: 4%;
-  opacity: 1;
-  pointer-events: auto;
-}
+    #contact-panel.show-form {
+      top: 4%;
+      opacity: 1;
+      pointer-events: auto;
+    }
 
 
     @keyframes rock {
-      0%, 100% { transform: translateY(0) rotate(-2deg); }
-      25% { transform: translateY(-3px) rotate(1deg); }
-      75% { transform: translateY(3px) rotate(-5deg); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-2deg);
+      }
+
+      25% {
+        transform: translateY(-3px) rotate(1deg);
+      }
+
+      75% {
+        transform: translateY(3px) rotate(-5deg);
+      }
     }
 
     .rocking {
@@ -123,55 +139,77 @@
     }
 
     @keyframes sway {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(4px); }
-  50% { transform: translateX(0); }
-  75% { transform: translateX(-4px); }
-  100% { transform: translateX(0); }
-}
+      0% {
+        transform: translateX(0);
+      }
 
-.animate-sway {
-  animation: sway 10s ease-in-out infinite;
-}
+      25% {
+        transform: translateX(4px);
+      }
+
+      50% {
+        transform: translateX(0);
+      }
+
+      75% {
+        transform: translateX(-4px);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .animate-sway {
+      animation: sway 10s ease-in-out infinite;
+    }
 
 
     @keyframes glowHighlight {
-    0% { box-shadow: 0 0 0px rgba(255, 215, 164, 0); }
-    50% { box-shadow: 0 0 25px rgba(255, 215, 164, 0.8); }
-    100% { box-shadow: 0 0 0px rgba(255, 215, 164, 0); }
+      0% {
+        box-shadow: 0 0 0px rgba(255, 215, 164, 0);
+      }
+
+      50% {
+        box-shadow: 0 0 25px rgba(255, 215, 164, 0.8);
+      }
+
+      100% {
+        box-shadow: 0 0 0px rgba(255, 215, 164, 0);
+      }
     }
+
     .glow {
-    animation: glowHighlight 2s ease-out;
+      animation: glowHighlight 2s ease-out;
     }
 
 
     @keyframes openReveal {
-  0% {
-    transform: scaleY(0);
-    transform-origin: top;
-    opacity: 0;
-  }
-  100% {
-    transform: scaleY(1);
-    transform-origin: top;
-    opacity: 1;
-  }
-}
+      0% {
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+      }
 
-[data-aos="open-up"] {
-  transform-origin: top;
-  animation: openReveal 2s ease-out both;
-}
+      100% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+      }
+    }
 
-
-
-    </style>
+    [data-aos="open-up"] {
+      transform-origin: top;
+      animation: openReveal 2s ease-out both;
+    }
+  </style>
 </head>
 
 <body class="bg-black text-white font-serif">
 
   <!-- Main Launch Section -->
-  <div class="content animate-sway relative min-h-screen pb-72 flex flex-col items-center justify-center overflow-hidden">
+  <div
+    class="content animate-sway relative min-h-screen pb-72 flex flex-col items-center justify-center overflow-hidden">
 
     <!-- 🚢 Ship -->
     <img src="assets/ship-trans.png" id="ship" alt="Ship"
@@ -185,50 +223,46 @@
 
 
   <!-- 📬 Contact Form -->
-    <div id="contact-panel" class="form-container max-w-md w-[50%] bg-[#141414]/60 backdrop-blur-md border border-[#a8927a]/30 rounded-2xl shadow-xl p-6">
-      <h2 class="text-2xl font-bold mb-6 text-center text-[#f4f1ea] tracking-wide">Signal the Captain</h2>
+  <div id="contact-panel"
+    class="form-container max-w-md w-[50%] bg-[#141414]/60 backdrop-blur-md border border-[#a8927a]/30 rounded-2xl shadow-xl p-6">
+    <h2 class="text-2xl font-bold mb-6 text-center text-[#f4f1ea] tracking-wide">Signal the Captain</h2>
 
-      <form id="contactForm" action="https://formspree.io/f/xzzgwena" method="POST" class="space-y-5">
-        <div>
-          <label for="name" class="block text-sm font-medium text-[#e7d9c7] mb-1">Your Name</label>
-          <input type="text" id="name" name="name" required
-            class="w-full px-4 py-2 bg-[#1c1c1c] text-white border border-[#a8927a]/50 rounded-md focus:ring-2 focus:ring-[#c8b6a6]/70 focus:outline-none transition" />
-        </div>
+    <form id="contactForm" action="https://formspree.io/f/xzzgwena" method="POST" class="space-y-5">
+      <div>
+        <label for="name" class="block text-sm font-medium text-[#e7d9c7] mb-1">Your Name</label>
+        <input type="text" id="name" name="name" required
+          class="w-full px-4 py-2 bg-[#1c1c1c] text-white border border-[#a8927a]/50 rounded-md focus:ring-2 focus:ring-[#c8b6a6]/70 focus:outline-none transition" />
+      </div>
 
-        <div>
-          <label for="email" class="block text-sm font-medium text-[#e7d9c7] mb-1">Email Address</label>
-          <input type="email" id="email" name="email" required
-            class="w-full px-4 py-2 bg-[#1c1c1c] text-white border border-[#a8927a]/50 rounded-md focus:ring-2 focus:ring-[#c8b6a6]/70 focus:outline-none transition" />
-        </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-[#e7d9c7] mb-1">Email Address</label>
+        <input type="email" id="email" name="email" required
+          class="w-full px-4 py-2 bg-[#1c1c1c] text-white border border-[#a8927a]/50 rounded-md focus:ring-2 focus:ring-[#c8b6a6]/70 focus:outline-none transition" />
+      </div>
 
-        <div>
-          <label for="message" class="block text-sm font-medium text-[#e7d9c7] mb-1">Your Message</label>
-          <textarea id="message" name="message" rows="5" required
-            class="w-full px-4 py-2 bg-[#1c1c1c] text-white border border-[#a8927a]/50 rounded-md focus:ring-2 focus:ring-[#c8b6a6]/70 focus:outline-none resize-none transition"
-            placeholder="Ahoy! I wanted to..."></textarea>
-        </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-[#e7d9c7] mb-1">Your Message</label>
+        <textarea id="message" name="message" rows="5" required
+          class="w-full px-4 py-2 bg-[#1c1c1c] text-white border border-[#a8927a]/50 rounded-md focus:ring-2 focus:ring-[#c8b6a6]/70 focus:outline-none resize-none transition"
+          placeholder="Ahoy! I wanted to..."></textarea>
+      </div>
 
-        <button type="submit"
-          class="w-full bg-[#c8b6a6] hover:bg-[#bfa999] text-[#2e1f1f] px-5 py-2 rounded-full font-semibold tracking-wide shadow-md transition-all duration-300">
-          Launch Signal
-        </button>
-      </form>
+      <button type="submit"
+        class="w-full bg-[#c8b6a6] hover:bg-[#bfa999] text-[#2e1f1f] px-5 py-2 rounded-full font-semibold tracking-wide shadow-md transition-all duration-300">
+        Launch Signal
+      </button>
+    </form>
 
-      <button onclick="document.getElementById('contact-panel').classList.remove('show-form')"
-        class="absolute top-2 right-4 text-white text-xl font-bold hover:text-[#c8b6a6] transition">&times;</button>
+    <button onclick="document.getElementById('contact-panel').classList.remove('show-form')"
+      class="absolute top-2 right-4 text-white text-xl font-bold hover:text-[#c8b6a6] transition">&times;</button>
 
-    </div>
+  </div>
 
 
 
   <!-- 🧭 Pirate Footer -->
-<footer 
-  class="relative bg-[#1e1a18] text-[#f4f1ea] font-serif mb-0"
-  data-aos="open-up" 
-  data-aos-delay="1000"
-  data-aos-duration="1600"
-  data-aos-easing="ease-out-cubic"
->
+  <footer class="relative bg-[#1e1a18] text-[#f4f1ea] font-serif mb-0" data-aos="open-up" data-aos-delay="1000"
+    data-aos-duration="1600" data-aos-easing="ease-out-cubic">
     <!-- Wooden Background -->
     <div class="absolute inset-0 z-0">
       <img src="assets/wood-wall.png" alt="Wood Wall" class="w-full h-full object-cover opacity-90" />
@@ -243,8 +277,7 @@
           <!-- <p class="text-sm">📍 India</p> -->
           <!-- <p class="text-sm">📧 <a href="mailto:lavi.bhadani@gmail.com" class="underline hover:text-[#c8b6a6]">lavi.bhadani@gmail.com</a></p> -->
 
-          <a href="index.html"
-    class="fixed left-16 
+          <a href="index.html" class="fixed left-16 
            bg-[#c8b6a6] text-[#3b2f2f]
            px-4 py-2 
            rounded-full 
@@ -255,12 +288,11 @@
            hover:scale-105 
            transition duration-200 ease-in-out 
            text-sm font-medium tracking-tight z-20">
-    <span class="text-xl">🧭</span> Back to the Map
-</a>
+            <span class="text-xl">🧭</span> Back to the Map
+          </a>
 
 
-<button onclick="document.getElementById('contact-panel').scrollIntoView({ behavior: 'smooth' })"
-    class="fixed left-64 
+          <button onclick="document.getElementById('contact-panel').scrollIntoView({ behavior: 'smooth' })" class="fixed left-64 
            bg-[#c8b6a6] text-[#3b2f2f]
            px-4 py-2 
            rounded-full 
@@ -271,16 +303,19 @@
            hover:scale-105 
            transition duration-200 ease-in-out 
            text-sm font-medium tracking-tight z-20">
-    <span class="text-xl">🎆</span> Send a message 
-</button>
+            <span class="text-xl">🎆</span> Send a message
+          </button>
 
         </div>
-<div class="md:text-right" data-aos="open-up" data-aos-delay="2000">
+        <div class="md:text-right" data-aos="open-up" data-aos-delay="2000">
           <h3 class="text-lg font-semibold mb-2">Connect with the Crew</h3>
           <ul class="space-y-2">
-            <li>🏴‍☠️ <a href="https://www.linkedin.com/in/lavanya-bhadani" target="_blank" class="hover:text-[#a6d4c7] underline">LinkedIn</a></li>
-            <li>⚓ <a href="https://github.com/lavanya-22-glitch" target="_blank" class="hover:text-[#a6d4c7] underline">GitHub</a></li>
-            <li>📧 <a href="mailto:lavi.bhadani@gmail.com" target="_blank" class="hover:text-[#c8b6a6]">lavi.bhadani@gmail.com</a></li>
+            <li>🏴‍☠️ <a href="https://www.linkedin.com/in/lavanya-bhadani" target="_blank"
+                class="hover:text-[#a6d4c7] underline">LinkedIn</a></li>
+            <li>⚓ <a href="https://github.com/lavanya-22-glitch" target="_blank"
+                class="hover:text-[#a6d4c7] underline">GitHub</a></li>
+            <li>📧 <a href="mailto:lavi.bhadani@gmail.com" target="_blank"
+                class="hover:text-[#c8b6a6]">lavi.bhadani@gmail.com</a></li>
           </ul>
         </div>
       </div>
@@ -300,46 +335,46 @@
 
       // Re-trigger animation
       const ship = document.getElementById('ship');
-const shipRect = ship.getBoundingClientRect();
-const flare = document.getElementById('flare');
+      const shipRect = ship.getBoundingClientRect();
+      const flare = document.getElementById('flare');
 
-// Calculate flare's starting position based on ship
-flare.style.left = `${ship.offsetLeft + ship.offsetWidth * 0.5}px`;
+      // Calculate flare's starting position based on ship
+      flare.style.left = `${ship.offsetLeft + ship.offsetWidth * 0.5}px`;
 
-// Reset and trigger animation
-// Reset both animations
-flare.classList.remove('launch', 'burst');
-void flare.offsetWidth;
+      // Reset and trigger animation
+      // Reset both animations
+      flare.classList.remove('launch', 'burst');
+      void flare.offsetWidth;
 
-// Launch flare
-flare.classList.add('launch');
+      // Launch flare
+      flare.classList.add('launch');
 
-// After flight (2s), burst it
-setTimeout(() => {
-  // 💥 Hardcoded end burst position (adjust as needed)
-  const finalLeft = 620;   // in pixels from left of page
-  const finalBottom = 580; // in pixels from bottom of page
+      // After flight (2s), burst it
+      setTimeout(() => {
+        // 💥 Hardcoded end burst position (adjust as needed)
+        const finalLeft = 620;   // in pixels from left of page
+        const finalBottom = 580; // in pixels from bottom of page
 
-  // Set flare directly to burst location
-  flare.style.left = `${finalLeft}px`;
-  flare.style.bottom = `${finalBottom}px`;
+        // Set flare directly to burst location
+        flare.style.left = `${finalLeft}px`;
+        flare.style.bottom = `${finalBottom}px`;
 
-  // Remove transform for accurate scaling
-  flare.style.transform = 'none';
+        // Remove transform for accurate scaling
+        flare.style.transform = 'none';
 
-  // Trigger burst
-  flare.classList.remove('launch');
-  flare.classList.add('burst');
+        // Trigger burst
+        flare.classList.remove('launch');
+        flare.classList.add('burst');
 
-  // Clean up after burst
-  setTimeout(() => {
-    flare.classList.remove('burst');
-    flare.style.opacity = 0;
-  }, 800);
-}, 2000); // Wait for launch animation to finish
+        // Clean up after burst
+        setTimeout(() => {
+          flare.classList.remove('burst');
+          flare.style.opacity = 0;
+        }, 800);
+      }, 2000); // Wait for launch animation to finish
 
-  // 👋 Close the contact panel right after animation starts
-  document.getElementById('contact-panel').classList.remove('show-form');
+      // 👋 Close the contact panel right after animation starts
+      document.getElementById('contact-panel').classList.remove('show-form');
 
       // Optional delay before form submission
       setTimeout(() => {
@@ -347,26 +382,27 @@ setTimeout(() => {
       }, 4000);
     });
 
-document.querySelector('.fixed.left-64').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' }); // 👈 scroll to top
+    document.querySelector('.fixed.left-64').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' }); // 👈 scroll to top
 
-  const contactPanel = document.getElementById('contact-panel');
-  contactPanel.classList.add('show-form');
+      const contactPanel = document.getElementById('contact-panel');
+      contactPanel.classList.add('show-form');
 
-  contactPanel.classList.add('glow');
-  setTimeout(() => contactPanel.classList.remove('glow'), 1600);
-});
+      contactPanel.classList.add('glow');
+      setTimeout(() => contactPanel.classList.remove('glow'), 1600);
+    });
 
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    once: true, // animate only once
-    duration: 1000, // animation duration in ms
-    offset: 120 // trigger point
-  });
-</script>
+  <script>
+    AOS.init({
+      once: true, // animate only once
+      duration: 1000, // animation duration in ms
+      offset: 120 // trigger point
+    });
+  </script>
 
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +9,48 @@
 
     <style>
         body {
-            background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('assets/about-bg.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('assets/about-bg.jpg') no-repeat center center/cover;
         }
 
         .scroll-text .para {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 0.6s ease, transform 0.6s ease;
-            display: none; /* important */
+            display: none;
+            /* important */
         }
 
         .scroll-text .para.visible-para {
-            display: block !important; /* force shown para to display */
+            display: block !important;
+            /* force shown para to display */
         }
 
         @keyframes sway {
-            0% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
-            100% { transform: rotate(-5deg); }
+            0% {
+                transform: rotate(-5deg);
+            }
+
+            50% {
+                transform: rotate(5deg);
+            }
+
+            100% {
+                transform: rotate(-5deg);
+            }
         }
 
         @keyframes sway-more {
-            0% { transform: rotate(-6deg); }
-            50% { transform: rotate(6deg); }
-            100% { transform: rotate(-6deg); }
+            0% {
+                transform: rotate(-6deg);
+            }
+
+            50% {
+                transform: rotate(6deg);
+            }
+
+            100% {
+                transform: rotate(-6deg);
+            }
         }
 
         .sway {
@@ -46,23 +65,25 @@
 
         @keyframes slideInUp {
             0% {
-            opacity: 0;
-            transform: translateY(40px);
+                opacity: 0;
+                transform: translateY(40px);
             }
+
             100% {
-            opacity: 1;
-            transform: translateY(0);
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
         @keyframes slideOutUp {
             0% {
-            opacity: 1;
-            transform: translateY(0);
+                opacity: 1;
+                transform: translateY(0);
             }
+
             100% {
-            opacity: 0;
-            transform: translateY(-40px);
+                opacity: 0;
+                transform: translateY(-40px);
             }
         }
 
@@ -86,43 +107,62 @@
 
 <body class="relative min-h-screen overflow-x-hidden text-[#3b2f2f] font-serif">
 
-    <div id="compass" class="absolute top -1 left-8 w-48 h-52 bg-[url('assets/compass.png')] bg-contain bg-no-repeat sway ease-in-out cursor-pointer"></div>
+    <div id="compass"
+        class="absolute top -1 left-8 w-48 h-52 bg-[url('assets/compass.png')] bg-contain bg-no-repeat sway ease-in-out cursor-pointer">
+    </div>
 
     <section class="grid grid-cols-2 gap-4 mx-auto ml-40">
-<div class="h-screen bg-[url('assets/scroll.png')] bg-no-repeat bg-[length:110%_110%] bg-center flex flex-col justify-center items-center scroll-text">
+        <div
+            class="h-screen bg-[url('assets/scroll.png')] bg-no-repeat bg-[length:110%_110%] bg-center flex flex-col justify-center items-center scroll-text">
             <div id="content" class="space-y-6 w- px-32 text-orange-900 items-center text-justify">
                 <p class="para visible-para text-center">Twist the wheel to uncover my secrets.</p>
-                <p class="para hidden-para">My voyage into coding began in 10th grade, and what started as a requirement soon became a passion. Over time, I’ve charted my course through both frontend and backend development, crafting digital tools that are clean, user-friendly, and built with purpose.</p>
-                <p class="para hidden-para">Currently, I’m diving deep into Python, machine learning, and data science — essential tools in my ever-growing arsenal. I enjoy designing systems that solve real-world problems with both creativity and logic.</p>
-                <p class="para hidden-para">Beyond the tech realm, you’ll find me sailing through sports like basketball and swimming, plotting strategy in chess, writing poems, and speaking on deck in JAM sessions and public events. I’ve also taken up roles as an adjudicator in competitions.</p>
+                <p class="para hidden-para">My voyage into coding began in 10th grade, and what started as a requirement
+                    soon became a passion. Over time, I’ve charted my course through both frontend and backend
+                    development, crafting digital tools that are clean, user-friendly, and built with purpose.</p>
+                <p class="para hidden-para">Currently, I’m diving deep into Python, machine learning, and data science —
+                    essential tools in my ever-growing arsenal. I enjoy designing systems that solve real-world problems
+                    with both creativity and logic.</p>
+                <p class="para hidden-para">Beyond the tech realm, you’ll find me sailing through sports like basketball
+                    and swimming, plotting strategy in chess, writing poems, and speaking on deck in JAM sessions and
+                    public events. I’ve also taken up roles as an adjudicator in competitions.</p>
                 <div class="para hidden-para">
-                    <h2 class="text-xl font-semibold text-center">🏴‍☠️ Class Representative – AI & DS Batch, IIT Patna</h2>
-                    <p>As the elected voice of my batch, I act as the bridge between the crew (students) and the command deck (faculty). I streamline communication, address concerns, and coordinate meetings — building leadership, accountability, and calm under pressure while steering the ship smoothly.</p>
+                    <h2 class="text-xl font-semibold text-center">🏴‍☠️ Class Representative – AI & DS Batch, IIT Patna
+                    </h2>
+                    <p>As the elected voice of my batch, I act as the bridge between the crew (students) and the command
+                        deck (faculty). I streamline communication, address concerns, and coordinate meetings — building
+                        leadership, accountability, and calm under pressure while steering the ship smoothly.</p>
                 </div>
                 <div class="para hidden-para">
                     <h2 class="text-xl font-semibold text-center">🧩 Sub-Coordinator – Hexachrome (Puzzle Club)</h2>
-                    <p>At Hexachrome, I craft brain teasers and logic challenges that sharpen minds across the IIT Patna crew. It feeds my love for puzzles and lets me design clever, engaging content — testing wit and observation, like solving a coded scroll or navigating a map of riddles.</p>
+                    <p>At Hexachrome, I craft brain teasers and logic challenges that sharpen minds across the IIT Patna
+                        crew. It feeds my love for puzzles and lets me design clever, engaging content — testing wit and
+                        observation, like solving a coded scroll or navigating a map of riddles.</p>
                 </div>
                 <div class="para hidden-para">
-                    <h2 class="text-xl font-semibold text-center">🎨 Sub-Coordinator – Celesta Tech Fest (Design Team)</h2>
-                    <p>In Celesta’s design crew, I create posters and digital art that power IIT Patna’s flagship tech fest. This role blends creativity with coordination and lets me chart bold visual routes — learning the ropes of branding, storytelling, and aesthetic navigation.</p>
+                    <h2 class="text-xl font-semibold text-center">🎨 Sub-Coordinator – Celesta Tech Fest (Design Team)
+                    </h2>
+                    <p>In Celesta’s design crew, I create posters and digital art that power IIT Patna’s flagship tech
+                        fest. This role blends creativity with coordination and lets me chart bold visual routes —
+                        learning the ropes of branding, storytelling, and aesthetic navigation.</p>
                 </div>
             </div>
         </div>
 
-    <div class="relative flex justify-center items-center w-full h-screen bg-[url('assets/wood-wall.png')] bg-cover bg-center">
-    <!-- White overlay on top of wood -->
-    <div class="absolute inset-0 bg-white bg-opacity-20 pointer-events-none z-10"></div>
+        <div
+            class="relative flex justify-center items-center w-full h-screen bg-[url('assets/wood-wall.png')] bg-cover bg-center">
+            <!-- White overlay on top of wood -->
+            <div class="absolute inset-0 bg-white bg-opacity-20 pointer-events-none z-10"></div>
 
-    <!-- Wheel sits above both -->
-    <div id="wheel" class="relative z-20 cursor-grab w-96 h-96 bg-[url('assets/wheel.png')] bg-contain bg-no-repeat transition-transform duration-500"></div>
-    </div>
+            <!-- Wheel sits above both -->
+            <div id="wheel"
+                class="relative z-20 cursor-grab w-96 h-96 bg-[url('assets/wheel.png')] bg-contain bg-no-repeat transition-transform duration-500">
+            </div>
+        </div>
 
 
     </section>
 
-    <a href="index.html"
-    class="fixed bottom-6 right-6 
+    <a href="index.html" class="fixed bottom-6 right-6 
             bg-[#c8b6a6] text-[#3b2f2f]
             px-4 py-2 
             rounded-full 
@@ -133,7 +173,7 @@
             hover:scale-105 
             transition duration-200 ease-in-out 
             text-sm font-medium tracking-tight z-20">
-    <span class="text-xl">🧭</span> Back to the Map
+        <span class="text-xl">🧭</span> Back to the Map
     </a>
 
 
@@ -161,8 +201,8 @@
                 previous.classList.remove('slide-in');
                 previous.classList.add('slide-out');
                 setTimeout(() => {
-                previous.classList.remove('slide-out', 'visible-para');
-                previous.classList.add('hidden-para');
+                    previous.classList.remove('slide-out', 'visible-para');
+                    previous.classList.add('hidden-para');
                 }, 600);
             }
 
